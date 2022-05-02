@@ -5,7 +5,7 @@
  */
 
 export const capitalizeString = (string) =>
-  string.split(' ').map((item) => item[0].toUpperCase() + item.slice(1, item.length)).join(' ');
+  string.split(' ').map((item) => `${item[0].toUpperCase()}${item.slice(1, item.length)}`).join(' ');
 
 /**
  * Должна быть function declaration
@@ -53,7 +53,7 @@ export const reducerIf = function (action, string) {
   } else if (action === 'capitalize') {
     let arr = string.split(' ');
     let result = arr.map((item) => {
-      return item[0].toUpperCase() + item.slice(1, item.length);
+      return `${item[0].toUpperCase()}${item.slice(1, item.length)}`;
     });
 
     return result.join(' ');
@@ -96,7 +96,7 @@ export const reducerSwitch = (action, string) => {
         let arr = string.split(' ');
 
         let result = arr.map((item) => {
-          return item[0].toUpperCase() + item.slice(1, item.length);
+          return `${item[0].toUpperCase()}${item.slice(1, item.length)}`;
         });
 
         return result.join(' ');
